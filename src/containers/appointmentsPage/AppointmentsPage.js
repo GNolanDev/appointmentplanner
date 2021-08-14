@@ -1,6 +1,6 @@
 import React from "react";
 
-export const AppointmentsPage = () => {
+const AppointmentsPage = () => {
   /*
   Define state variables for 
   appointment info
@@ -11,7 +11,6 @@ export const AppointmentsPage = () => {
     /*
     Add contact info and clear data  
     */
-   
   };
 
   return (
@@ -26,3 +25,11 @@ export const AppointmentsPage = () => {
     </div>
   );
 };
+
+AppointmentsPage.PropTypes = {
+  contacts: PropTypes.array.isRequired,
+  appointments: PropTypes.array.isRequired,
+  onAddNewAppointment: PropTypes.func.isRequired,
+};
+
+export default AppointmentsPage;

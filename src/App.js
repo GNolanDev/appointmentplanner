@@ -3,8 +3,8 @@ import { Switch, Route, Redirect, NavLink } from "react-router-dom";
 import Contact from "./components/contact/Contact";
 import Appointment from "./components/appointment/Appointment";
 
-import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage";
-import { ContactsPage } from "./containers/contactsPage/ContactsPage";
+import AppointmentsPage from "./containers/appointmentsPage/AppointmentsPage";
+import ContactsPage from "./containers/contactsPage/ContactsPage";
 
 function App() {
   /*
@@ -53,11 +53,15 @@ function App() {
           </Route>
           <Route path={ROUTES.CONTACTS}>
             {/* Add props to ContactsPage */}
-            <ContactsPage />
+            <ContactsPage contacts={contacts} onAddNewContact={addNewContact} />
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
             {/* Add props to AppointmentsPage */}
-            <AppointmentsPage />
+            <AppointmentsPage
+              contacts={contacts}
+              appointments={appointments}
+              onAddNewAppointment={addNewAppointment}
+            />
           </Route>
         </Switch>
       </main>

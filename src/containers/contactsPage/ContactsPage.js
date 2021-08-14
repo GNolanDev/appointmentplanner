@@ -1,6 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export const ContactsPage = () => {
+const ContactsPage = () => {
   /*
   Define state variables for 
   contact info and duplicate check
@@ -22,7 +23,7 @@ export const ContactsPage = () => {
   return (
     <div>
       <section>
-        <h2>Add Contact</h2> 
+        <h2>Add Contact</h2>
       </section>
       <hr />
       <section>
@@ -31,3 +32,10 @@ export const ContactsPage = () => {
     </div>
   );
 };
+
+ContactsPage.PropTypes = {
+  contacts: PropTypes.array.isRequired,
+  onAddNewContact: PropTypes.func.isRequired,
+};
+
+export default ContactsPage;
