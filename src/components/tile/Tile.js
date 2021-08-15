@@ -1,9 +1,5 @@
 import React from "react";
 
-export const Tile = () => {
-  return (
-    <div className="tile-container">
-      
-    </div>
-  );
+export const Tile = (props) => {
+  return <div className="tile-container">{props.item.name}</div>;
 };

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import ContactForm from "../../components/contactForm/ContactForm";
-import { TileList } from "../../components/tileList/TileList";
+import TileList from "../../components/tileList/TileList";
 
 const ContactsPage = (props) => {
   /*
@@ -73,7 +73,7 @@ const ContactsPage = (props) => {
       <hr />
       <section>
         <h2>Contacts</h2>
-        <TileList contacts={props.contacts} />
+        <TileList arr={props.contacts} />
       </section>
     </div>
   );

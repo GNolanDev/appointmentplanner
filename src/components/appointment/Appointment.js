@@ -1,4 +1,5 @@
 import Contact from "../contact/Contact";
+import { getNewId } from "../../helpers/getNewId";
 
 class Appointment {
   constructor(title, contact, date, time) {
@@ -6,6 +7,7 @@ class Appointment {
     this.contact = contact || new Contact();
     this.date = date || "";
     this.time = time || "";
+    this.id = getNewId();
   }
 }
 
