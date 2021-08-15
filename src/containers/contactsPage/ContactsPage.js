@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { ContactForm } from "../../components/contactForm/ContactForm";
+import ContactForm from "../../components/contactForm/ContactForm";
 import { TileList } from "../../components/tileList/TileList";
 
 const ContactsPage = (props) => {
@@ -29,16 +29,20 @@ const ContactsPage = (props) => {
     }
   };
 
-  const handleNameChange = (event) => {
-    setCurrentName(event.target.value);
-  };
-
-  const handlePhoneChange = (event) => {
-    setCurrentPhone(event.target.value);
-  };
-
-  const handleEmailChange = (event) => {
-    setCurrentEmail(event.target.value);
+  const handleAnyChange = (event) => {
+    switch (event.target.name) {
+      case "name":
+        setCurrentName(event.target.value);
+        break;
+      case "phone":
+        setCurrentPhone(event.target.value);
+        break;
+      case "email":
+        setCurrentEmail(event.target.value);
+        break;
+      default:
+        break;
+    }
   };
 
   /*
@@ -60,11 +64,9 @@ const ContactsPage = (props) => {
         <h2>Add Contact</h2>
         <ContactForm
           name={currentName}
-          onNameChange={handleNameChange}
           phone={currentPhone}
-          onPhoneChange={handlePhoneChange}
           email={currentEmail}
-          onEmailChange={handleEmailChange}
+          onAnyChange={handleAnyChange}
           onSubmit={handleSubmit}
         />
       </section>
