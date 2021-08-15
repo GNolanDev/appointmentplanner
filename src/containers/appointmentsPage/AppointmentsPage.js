@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const AppointmentsPage = () => {
   /*
@@ -26,7 +27,7 @@ const AppointmentsPage = () => {
   );
 };
 
-AppointmentsPage.PropTypes = {
+AppointmentsPage.propTypes = {
   contacts: PropTypes.array.isRequired,
   appointments: PropTypes.array.isRequired,
   onAddNewAppointment: PropTypes.func.isRequired,

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Switch, Route, Redirect, NavLink } from "react-router-dom";
 import Contact from "./components/contact/Contact";
 import Appointment from "./components/appointment/Appointment";

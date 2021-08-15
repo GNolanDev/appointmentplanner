@@ -1,5 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import { ContactForm } from "../../components/contactForm/ContactForm";
+import { TileList } from "../../components/tileList/TileList";
 
 const ContactsPage = (props) => {
   /*
@@ -17,7 +19,8 @@ const ContactsPage = (props) => {
     if the contact name is not a duplicate
     */
     if (
-      contacts.filter((contact) => contact.name === currentName).length <= 0
+      props.contacts.filter((contact) => contact.name === currentName).length <=
+      0
     ) {
       props.onAddNewContact(currentName, currentPhone, currentEmail);
       setCurrentName("");
@@ -43,7 +46,10 @@ const ContactsPage = (props) => {
   contacts array variable in props
   */
   useEffect(() => {
-    if (contacts.filter((contact) => contact.name === currentName).length > 0) {
+    if (
+      props.contacts.filter((contact) => contact.name === currentName).length >
+      0
+    ) {
       alert("Name is a duplicate of one already in Contacts");
     }
   }, [currentName]);
@@ -71,7 +77,7 @@ const ContactsPage = (props) => {
   );
 };
 
-ContactsPage.PropTypes = {
+ContactsPage.propTypes = {
   contacts: PropTypes.array.isRequired,
   onAddNewContact: PropTypes.func.isRequired,
 };
