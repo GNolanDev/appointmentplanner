@@ -56,7 +56,7 @@ const ContactsPage = (props) => {
     ) {
       alert("Name is a duplicate of one already in Contacts");
     }
-  }, [currentName]);
+  }, [props.contacts, currentName]);
 
   return (
     <div>

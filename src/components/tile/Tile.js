@@ -15,14 +15,26 @@ const Tile = (props) => {
       if (property === "title" || property === "name") {
         tileClass += "-title";
       }
-      tile.push(
-        <p
-          key={`${props.item[property]}${props.item.id}`}
-          className={tileClass}
-        >
-          {props.item[property]}
-        </p>
-      );
+      if (typeof props.item[property] === "object") {
+        // catch contact object and return name instead
+        tile.push(
+          <p
+            key={`${props.item[property].name}${props.item[property].id}`}
+            className={tileClass}
+          >
+            {props.item[property].name}
+          </p>
+        );
+      } else {
+        tile.push(
+          <p
+            key={`${props.item[property]}${props.item.id}`}
+            className={tileClass}
+          >
+            {props.item[property]}
+          </p>
+        );
+      }
     }
   }
   return <div className="tile-container">{tile}</div>;

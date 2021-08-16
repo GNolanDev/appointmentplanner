@@ -34,7 +34,7 @@ const AppointmentForm = (props) => {
       <ContactPicker
         contacts={props.contacts}
         onChange={props.onAnyChange}
-        currentName={props.contactName}
+        currentName={props.currentName}
       />
       <input type="submit" value="Submit" />
     </form>
@@ -44,7 +44,7 @@ const AppointmentForm = (props) => {
 AppointmentForm.propTypes = {
   contacts: PropTypes.array.isRequired,
   title: PropTypes.string.isRequired,
-  contactName: PropTypes.string.isRequired,
+  currentName: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   time: PropTypes.string.isRequired,
   onAnyChange: PropTypes.func.isRequired,

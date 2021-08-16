@@ -9,7 +9,7 @@ const AppointmentsPage = (props) => {
   appointment info
   */
   let [currentTitle, setCurrentTitle] = useState("");
-  let [currentContactName, setCurrentContactName] = useState("");
+  let [currentContactName, setCurrentContactName] = useState("No Name");
   let [currentDate, setCurrentDate] = useState("");
   let [currentTime, setCurrentTime] = useState("");
 
@@ -19,7 +19,9 @@ const AppointmentsPage = (props) => {
     Add contact info and clear data  
     */
     // do nothing if the contact name is not in the array of contacts
-    if (contacts.filter((ct) => ct.name === currentContactName).length <= 0) {
+    if (
+      props.contacts.filter((ct) => ct.name === currentContactName).length <= 0
+    ) {
       return;
     }
     props.onAddNewAppointment(
@@ -29,7 +31,7 @@ const AppointmentsPage = (props) => {
       currentTime
     );
     setCurrentTitle("");
-    setCurrentContactName("");
+    setCurrentContactName("No Name");
     setCurrentDate("");
     setCurrentTime("");
   };
@@ -61,7 +63,7 @@ const AppointmentsPage = (props) => {
         <AppointmentForm
           contacts={props.contacts}
           title={currentTitle}
-          contactName={currentContactName}
+          currentName={currentContactName}
           date={currentDate}
           time={currentTime}
           onAnyChange={handleAnyChange}

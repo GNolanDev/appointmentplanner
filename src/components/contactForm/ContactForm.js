@@ -4,12 +4,14 @@ import PropTypes from "prop-types";
 const ContactForm = (props) => {
   return (
     <form onSubmit={props.onSubmit}>
+      <label htmlFor="name">Name:</label>
       <input
         type="text"
         value={props.name}
         name="name"
         onChange={props.onAnyChange}
       />
+      <label htmlFor="phone">Phone:</label>
       <input
         type="text"
         value={props.phone}
@@ -17,8 +19,9 @@ const ContactForm = (props) => {
         pattern="^0\d{7,10}$"
         onChange={props.onAnyChange}
       />
+      <label htmlFor="email">Email:</label>
       <input
-        type="text"
+        type="email"
         value={props.email}
         name="email"
         onChange={props.onAnyChange}
