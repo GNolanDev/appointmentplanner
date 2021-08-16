@@ -9,6 +9,7 @@ const ContactForm = (props) => {
         type="text"
         value={props.name}
         name="name"
+        id="name"
         onChange={props.onAnyChange}
       />
       <label htmlFor="phone">Phone:</label>
@@ -16,6 +17,7 @@ const ContactForm = (props) => {
         type="text"
         value={props.phone}
         name="phone"
+        id="phone"
         pattern="^0\d{7,10}$"
         onChange={props.onAnyChange}
       />
@@ -24,6 +26,7 @@ const ContactForm = (props) => {
         type="email"
         value={props.email}
         name="email"
+        id="email"
         onChange={props.onAnyChange}
       />
       <input type="submit" value="Submit" />

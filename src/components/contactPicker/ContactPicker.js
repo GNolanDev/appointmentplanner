@@ -10,10 +10,18 @@ const ContactPicker = (props) => {
     );
   });
   return (
-    <select name="contact" onChange={props.onChange} value={props.currentName}>
-      <option value="No Name">No contact selected</option>
-      {optionsArray}
-    </select>
+    <div>
+      <label htmlFor="contact">Contact:</label>
+      <select
+        id="contact"
+        name="contact"
+        onChange={props.onChange}
+        value={props.currentName}
+      >
+        <option value="No Name">No contact selected</option>
+        {optionsArray}
+      </select>
+    </div>
   );
 };
 

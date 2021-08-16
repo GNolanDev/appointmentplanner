@@ -12,23 +12,29 @@ const AppointmentForm = (props) => {
 
   return (
     <form onSubmit={props.onSubmit}>
+      <label htmlFor="title">Title:</label>
       <input
         type="text"
         value={props.title}
         name="title"
+        id="title"
         onChange={props.onAnyChange}
       />
+      <label htmlFor="date">Date:</label>
       <input
         type="date"
         value={props.date}
         name="date"
+        id="date"
         min={getTodayString()}
         onChange={props.onAnyChange}
       />
+      <label htmlFor="time">Time:</label>
       <input
         type="time"
         value={props.time}
         name="time"
+        id="time"
         onChange={props.onAnyChange}
       />
       <ContactPicker
