@@ -15,7 +15,7 @@ const Tile = (props) => {
       if (property === "title" || property === "name") {
         tileClass += "-title";
       }
-      if (typeof props.item[property] === "object") {
+      if (property === "contact") {
         // catch contact object and return name instead
         tile.push(
           <p
