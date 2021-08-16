@@ -9,7 +9,7 @@ const AppointmentsPage = (props) => {
   appointment info
   */
   let [currentTitle, setCurrentTitle] = useState("");
-  let [currentContact, setCurrentContact] = useState("");
+  let [currentContact, setCurrentContact] = useState({});
   let [currentDate, setCurrentDate] = useState("");
   let [currentTime, setCurrentTime] = useState("");
 
@@ -25,7 +25,7 @@ const AppointmentsPage = (props) => {
       currentTime
     );
     setCurrentTitle("");
-    setCurrentContact("");
+    setCurrentContact({});
     setCurrentDate("");
     setCurrentTime("");
   };
@@ -36,6 +36,7 @@ const AppointmentsPage = (props) => {
         setCurrentTitle(event.target.value);
         break;
       case "contact":
+        // may need to use name of contact as 'value' to fetch full contact from array
         setCurrentContact(event.target.value);
         break;
       case "date":
@@ -54,6 +55,7 @@ const AppointmentsPage = (props) => {
       <section>
         <h2>Add Appointment</h2>
         <AppointmentForm
+          contacts={props.contacts}
           title={currentTitle}
           contact={currentContact}
           date={currentDate}
