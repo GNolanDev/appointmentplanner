@@ -28,12 +28,15 @@ function App() {
     setContacts((prevContacts) => [...prevContacts, newContact]);
   };
 
-  const addNewAppointment = (title, contact, date, time) => {
-    const newAppointment = new Appointment(title, contact, date, time);
-    setAppointments((prevAppointments) => [
-      ...prevAppointments,
-      newAppointment,
-    ]);
+  const addNewAppointment = (title, contactName, date, time) => {
+    let contact = contacts.filter((ct) => ct.name === contactName)[0];
+    if (contact) {
+      const newAppointment = new Appointment(title, contact, date, time);
+      setAppointments((prevAppointments) => [
+        ...prevAppointments,
+        newAppointment,
+      ]);
+    }
   };
 
   return (

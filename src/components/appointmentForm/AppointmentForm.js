@@ -31,7 +31,11 @@ const AppointmentForm = (props) => {
         name="time"
         onChange={props.onAnyChange}
       />
-      <ContactPicker contacts={props.contacts} />
+      <ContactPicker
+        contacts={props.contacts}
+        onChange={props.onAnyChange}
+        currentName={props.contactName}
+      />
       <input type="submit" value="Submit" />
     </form>
   );
@@ -40,8 +44,7 @@ const AppointmentForm = (props) => {
 AppointmentForm.propTypes = {
   contacts: PropTypes.array.isRequired,
   title: PropTypes.string.isRequired,
-  // best to pass full contact object here, or just the name?
-  contact: PropTypes.object.isRequired,
+  contactName: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   time: PropTypes.string.isRequired,
   onAnyChange: PropTypes.func.isRequired,
