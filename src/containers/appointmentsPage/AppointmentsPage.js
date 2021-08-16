@@ -30,7 +30,24 @@ const AppointmentsPage = (props) => {
     setCurrentTime("");
   };
 
-  const handleAnyChange = (event) => {};
+  const handleAnyChange = (event) => {
+    switch (event.target.name) {
+      case "title":
+        setCurrentTitle(event.target.value);
+        break;
+      case "contact":
+        setCurrentContact(event.target.value);
+        break;
+      case "date":
+        setCurrentDate(event.target.value);
+        break;
+      case "time":
+        setCurrentTime(event.target.value);
+        break;
+      default:
+        break;
+    }
+  };
 
   return (
     <div>
