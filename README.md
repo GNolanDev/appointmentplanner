@@ -12,7 +12,7 @@ This was a good overview of how React single page apps make use of <BrowserRoute
 
 ## Requirements
 
-Hosted on [surge](http://gnolandevappointmentplanner.surge.sh/), and [netlify](https://gnolandevappointmentplanner.netlify.app/).
+Hosted on [netlify](https://gnolandevappointmentplanner.netlify.app/).
 
 ## Contact
 
